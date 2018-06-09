@@ -26,79 +26,107 @@ func main() {
 
 `AES`
 
+```
 NewAES(key, iv []byte, args ...Options) (*Crypt, error)
+```
 
 `DES`
 
+```
 NewDES(key, iv []byte, args ...Options) (*Crypt, error)
+```
 
 `Triple DES`
 
+```
 NewDES3(key, iv []byte, args ...Options) (*Crypt, error)
+```
 
 `ChaCha20`
 
+```
 NewChaCha20(key, iv []byte）(*Crypt, error)
+```
 
 `Blowfish`
 
+```
 NewBlowfish(key[]byte) (*Crypt, error)
+```
 
 `RC4`
 
+```
 NewRC4(key []byte) (*Crypt, error)
+```
 
 ##### Crypt
 
+```
 (Crypt) Encrypt(plaintext []byte) (ciphertext []byte, err error)
 
 (Crypt) Decrypt(ciphertext []byte) (plaintext []byte, err error)
+```
 
 ## Shortcut
 `AES`
-
+```
 AES.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
 
 AES.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
+```
 
 `DES`
 
+```
 DES.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
 
 DES.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
+```
 
 `DES3`
 
+```
 DES3.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
 
 DES3.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
+```
 
 `ChaCha20`
 
+```
 ChaCha20.Encrypt(plaintext, key, iv []byte) ([]byte, error)
 
 ChaCha20.Decrypt(ciphertext, key, iv []byte) ([]byte, error)
+```
 
 `Blowfish`
 
+```
 Blowfish.Encrypt(plaintext, key []byte) ([]byte, error)
 
 Blowfish.Decrypt(ciphertext, key []byte) ([]byte, error)
+```
 
 `RC4`
 
+```
 RC4.Encrypt(plaintext, key []byte) ([]byte, error)
 
 RC4.Decrypt(ciphertext, key []byte) ([]byte, error)
+```
 
 `MD5`
 
+```
 MD5.Sum(plaintext []byte) []byte
 
 MD5.Hex(plaintext []byte) string
+```
 
 `Sha3`
 
+```
 Sha3.Sum224(data []byte) []byte
 
 Sha3.Sum256(data []byte) []byte
@@ -110,7 +138,7 @@ Sha3.Sum512(data []byte) []byte
 Sha3.Shake128(data []byte, size int) (hash []byte)
 
 Sha3.Shake256(data []byte, size int) (hash []byte)
-
+```
 
 ## Options.Mode <font color=gray>block cipher mode</font>
 
