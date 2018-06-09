@@ -13,10 +13,16 @@ func main() {
     if err != nil {
         ...
     }
+
+    // encrypt
     ciphertext, err := c.Encrypt(plaintext)
 
+    // decrypt
+    plaintext, err = c.Decrypt(ciphertext)
 
-    // shortcut
+    ...
+
+    // shortcuts
     ciphertext, err := crypt.AES.Encrypt(plaintext, key, nil, crypt.Options{Mode: crypt.MODE_CBC, Padding: crypt.PAD_ANSIX923})
 
 }
@@ -68,7 +74,7 @@ NewRC4(key []byte) (*Crypt, error)
 (Crypt) Decrypt(ciphertext []byte) (plaintext []byte, err error)
 ```
 
-## Shortcut
+## Shortcuts
 **AES**
 
 * AES.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
