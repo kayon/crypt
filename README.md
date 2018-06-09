@@ -9,7 +9,7 @@ func main() {
 
     ...
 
-    c, err := crypt.NewAES(key, nil)
+    c, err := crypt.NewAES(key, nil, crypt.Options{Padding: crypt.PAD_ZEROPADDING})
     if err != nil {
         ...
     }
