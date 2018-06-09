@@ -24,43 +24,43 @@ func main() {
 
 ## List of methods
 
-`AES`
+**AES**
 
 ```
 NewAES(key, iv []byte, args ...Options) (*Crypt, error)
 ```
 
-`DES`
+**DES**
 
 ```
 NewDES(key, iv []byte, args ...Options) (*Crypt, error)
 ```
 
-`Triple DES`
+**Triple DES**
 
 ```
 NewDES3(key, iv []byte, args ...Options) (*Crypt, error)
 ```
 
-`ChaCha20`
+**ChaCha20**
 
 ```
 NewChaCha20(key, iv []byte）(*Crypt, error)
 ```
 
-`Blowfish`
+**Blowfish**
 
 ```
 NewBlowfish(key[]byte) (*Crypt, error)
 ```
 
-`RC4`
+**RC4**
 
 ```
 NewRC4(key []byte) (*Crypt, error)
 ```
 
-##### Crypt
+#### Crypt
 
 ```
 (Crypt) Encrypt(plaintext []byte) (ciphertext []byte, err error)
@@ -69,125 +69,113 @@ NewRC4(key []byte) (*Crypt, error)
 ```
 
 ## Shortcut
-`AES`
-```
-AES.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
+**AES**
 
-AES.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
-```
+* AES.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
 
-`DES`
+* AES.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
 
-```
-DES.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
+**DES**
 
-DES.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
-```
+* DES.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
 
-`DES3`
+* DES.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
 
-```
-DES3.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
+**DES3**
 
-DES3.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
-```
+* DES3.Encrypt(plaintext, key, iv []byte, args ...Options) ([]byte, error)
 
-`ChaCha20`
+* DES3.Decrypt(ciphertext, key, iv []byte, args ...Options) ([]byte, error)
 
-```
-ChaCha20.Encrypt(plaintext, key, iv []byte) ([]byte, error)
+**ChaCha20**
 
-ChaCha20.Decrypt(ciphertext, key, iv []byte) ([]byte, error)
-```
+* ChaCha20.Encrypt(plaintext, key, iv []byte) ([]byte, error)
 
-`Blowfish`
+* ChaCha20.Decrypt(ciphertext, key, iv []byte) ([]byte, error)
 
-```
-Blowfish.Encrypt(plaintext, key []byte) ([]byte, error)
+**Blowfish**
 
-Blowfish.Decrypt(ciphertext, key []byte) ([]byte, error)
-```
+* Blowfish.Encrypt(plaintext, key []byte) ([]byte, error)
 
-`RC4`
+* Blowfish.Decrypt(ciphertext, key []byte) ([]byte, error)
 
-```
-RC4.Encrypt(plaintext, key []byte) ([]byte, error)
+**RC4**
 
-RC4.Decrypt(ciphertext, key []byte) ([]byte, error)
-```
+* RC4.Encrypt(plaintext, key []byte) ([]byte, error)
 
-`MD5`
+* RC4.Decrypt(ciphertext, key []byte) ([]byte, error)
 
-```
-MD5.Sum(plaintext []byte) []byte
+**MD5**
 
-MD5.Hex(plaintext []byte) string
-```
+* MD5.Sum(plaintext []byte) []byte
 
-`Sha3`
+* MD5.Hex(plaintext []byte) string
 
-```
-Sha3.Sum224(data []byte) []byte
 
-Sha3.Sum256(data []byte) []byte
+**Sha3**
 
-Sha3.Sum384(data []byte) []byte
+* Sha3.Sum224(data []byte) []byte
 
-Sha3.Sum512(data []byte) []byte
+* Sha3.Sum256(data []byte) []byte
 
-Sha3.Shake128(data []byte, size int) (hash []byte)
+* Sha3.Sum384(data []byte) []byte
 
-Sha3.Shake256(data []byte, size int) (hash []byte)
-```
+* Sha3.Sum512(data []byte) []byte
 
-## Options.Mode <font color=gray>block cipher mode</font>
+* Sha3.Shake128(data []byte, size int) (hash []byte)
 
-* MODE_CBC `default`
+* Sha3.Shake256(data []byte, size int) (hash []byte)
 
-  <font color=gray>`CBC` Cipher-block chaining</font>
 
-* MODE_CFB
+## Options.Mode
+*block cipher mode*
 
-  <font color=gray>`CFB` Cipher feedback</font>
+* **MODE_CBC** *default*
 
-* MODE_CTR
+  `CBC` Cipher-block chaining
 
-  <font color=gray>`CTR` Counter mode</font>
+* **MODE_CFB**
 
-* MODE_OFB
+  `CFB` Cipher feedback</font>
 
-  <font color=gray>`OFB` Output feedback</font>
+* **MODE_CTR**
 
-* MODE_GCM
+  `CTR` Counter mode
 
-  <font color=gray>`GCM` Galois/Counter Mod</font>
+* **MODE_OFB**
 
-* MODE_ECB
+  `OFB` Output feedback
 
-  <font color=gray>`ECB` Electronic codebook</font>
+* **MODE_GCM**
+
+  `GCM` Galois/Counter Mod
+
+* **MODE_ECB**
+
+  `ECB` Electronic codebook
 
 ## Options.Padding
 
-* PAD_PKCS7 `default`
+* **PAD_PKCS7** *default*
 
-  <font color=gray>PKCS#7 RFC 5652</font>
+  PKCS#7 RFC 5652
 
-* PAD_ISO97971
+* **PAD_ISO97971**
 
-  <font color=gray>ISO/IEC 9797-1 Padding Method 2</font>
+  ISO/IEC 9797-1 Padding Method 2
 
-* PAD_ANSIX923
+* **PAD_ANSIX923**
 
-  <font color=gray>ANSI X.923</font>
+  ANSI X.923
 
-* PAD_ISO10126
+* **PAD_ISO10126**
 
-  <font color=gray>ISO 10126</font>
+  ISO 10126
 
-* PAD_ZEROPADDING
+* **PAD_ZEROPADDING**
 
-  <font color=gray>Zero padding</font>
+  Zero padding
 
-* PAD_NOPADDING
+* **PAD_NOPADDING**
 
 
